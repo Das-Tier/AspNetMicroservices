@@ -28,7 +28,7 @@ namespace AspnetRunBasics
                 c.BaseAddress = new Uri(Configuration["ApiSettings:GatewayAddress"]));
 
             services.AddHttpClient<IOrderService, OrderService>(c =>
-                c.BaseAddress = new Uri(Configuration["ApiSettings:GatewayAddress"]));
+                c.BaseAddress = new Uri(Configuration["ApiSettings:OrderingUrl"]));
 
 
             services.AddRazorPages();
@@ -48,7 +48,7 @@ namespace AspnetRunBasics
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
